@@ -54,11 +54,7 @@ public class Calculator {
 		if (x == 0 || y == 0) {
 		divValue = 0;
 		} else {
-			if (x > y) {
-				divValue = x / y;
-				} else {
-				divValue = y / x;
-				}
+		divValue = x / y;
 		}
 		return divValue;
 
