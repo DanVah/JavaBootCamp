@@ -7,10 +7,12 @@ public class Student extends Person implements Introduce {
 
 	//Default constructor
 	public Student(){
+		super();
+		this.schoolName = "na";
 	}
 
 	//Parameterized constructor
-	public Student(String firstName, String secondName, int age, String schoolName) {
+	public Student(String firstName, String secondName, int age, String schoolName) throws customException {
 		super(firstName, secondName, age);
 		this.schoolName = schoolName;
 	}

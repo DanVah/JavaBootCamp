@@ -6,7 +6,7 @@ public class Person implements Introduce {
 	private String firstName;
 	private String secondName;
 	private int age;
-	
+
 	//Default constructor
 	public Person() {
 		this.firstName="na";
@@ -15,7 +15,16 @@ public class Person implements Introduce {
 	}
 
 	//Parameterized constructor
-	public Person(String firstName, String secondName, int age) {
+	public Person(String firstName, String secondName, int age) throws customException {
+
+		//a customException is thrown when name contains unwanted characters
+		if(firstName.matches("[a-zA-Z]+") == false) {
+			throw new customException("First name " + firstName + " is not accaptable");
+		}
+		//a customException is thrown when second name contains unwanted characters
+		if(secondName.matches("[a-zA-Z]+") == false) {
+			throw new customException("Second name " + secondName + " is not accaptable");
+		}
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.age = age;
@@ -35,7 +44,7 @@ public class Person implements Introduce {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
+
 	//secondName getter setter
 	public String getSecondName() {
 		return secondName;
